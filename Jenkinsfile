@@ -14,11 +14,7 @@ pipeline {
                 echo 'Executing code on the host machine outside the Jenkins container...'
                 // Running a shell command on the host machine (outside Docker container)
                 sh '''
-                    if [ -f /host-machine-script.sh ]; then
-                        python3 --version
-                    else
-                        echo "No script found on the host machine."
-                    fi
+                    python3 --version
                 '''
             }
         }
