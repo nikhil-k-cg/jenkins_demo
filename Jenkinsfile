@@ -1,13 +1,11 @@
 pipeline {
-    agent { docker 
-           { image 'jenkins/jenkins:lts-jdk17' }  // This is the Jenkins Docker container
-          }
-
+    agent any  // No Docker container is used
     stages {
-        stage('Setup Python Environment') {
+        stage('Build') {
             steps {
                 script {
-                    sh 'python3 --version'  // Ensure Python is installed
+                    // Running on the Jenkins host, not in Docker
+                    sh 'python3 --version'
                 }
             }
         }
