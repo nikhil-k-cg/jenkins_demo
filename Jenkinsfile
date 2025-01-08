@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker 'jenkins/jenkins:lts' }  // This is the Jenkins Docker container
+    agent { docker 'jenkins/jenkins:lts-jdk17' }  // This is the Jenkins Docker container
 
     stages {
         stage('Setup Python Environment') {
